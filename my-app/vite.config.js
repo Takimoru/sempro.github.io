@@ -1,11 +1,17 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import { postcss } from 'tailwindcss'
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  css:{
-    postcss:'./postcss.config.js',
+  css: {
+    postcss: './postcss.config.js',
+  },
+  test: {
+    environment: 'jsdom',
+  },
+  server: {
+    host: 'community_serve.local',
+    port: 5173,
+    open: '/dashboard', // Opens this route when the server starts
   },
 })

@@ -5,7 +5,7 @@ export const useDashboardController = () => {
   const navigate = useNavigate();
 
   const goToAddProgram = () => {
-    navigate("/add-program");
+    navigate("/Calendarside");
   };
 
   return {

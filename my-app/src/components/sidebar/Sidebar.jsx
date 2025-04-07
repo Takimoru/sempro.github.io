@@ -3,8 +3,16 @@ import React from "react";
 import SidebarNavItem from "./SidebarNavItem";
 import ProgramStats from "./ProgramStats";
 import { HomeIcon, CalendarIcon, ChartIcon } from "../Icons/Icons";
+import { useNavigate } from "react-router-dom";
+
 
 const Sidebar = () => {
+  const navigate = useNavigate();
+
+  const backToHome = () => {
+    navigate('/dashboard')
+  };
+
   return (
     <aside className="flex flex-col h-full bg-white shadow-sm w-[280px] max-md:w-60 max-sm:w-20">
       <header className="flex gap-3 items-center px-6 h-16 border-b">
@@ -17,6 +25,7 @@ const Sidebar = () => {
           TimeLoop
         </h1>
         <button
+          onClick={backToHome}
           aria-label="Collapse sidebar"
           className="ml-auto w-6 h-6 text-base bg-white shadow-sm rounded-[33554400px] text-zinc-900"
         >
