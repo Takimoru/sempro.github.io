@@ -4,13 +4,18 @@ import Sidebar from "../sidebar/Sidebar";
 import DashboardHeader from "./DashboardHeader";
 import MetricsCard from "./MetricsCard";
 import ProgramCard from "./ProgramCard";
+import { useDashboardController } from "../../controller/dashboardController";
+
 
 const CommunityServiceDashboard = () => {
+  const { goToAddProgram } = useDashboardController();
+
+
   return (
     <div className="flex h-screen bg-slate-50">
       <Sidebar />
       <main className="overflow-auto flex-1 p-6">
-        <DashboardHeader />
+        <DashboardHeader onAddProgramClick={goToAddProgram} />
 
         <section
           aria-label="Program Metrics"
@@ -18,7 +23,7 @@ const CommunityServiceDashboard = () => {
         >
           <MetricsCard title="Upcoming Programs" count={1} />
           <MetricsCard title="In Progress" count={1} />
-          <MetricsCard title="Completed" count={1} />
+          <MetricsCard title="Completed" count={2} />
         </section>
 
         <section
