@@ -14,5 +14,8 @@ export default defineConfig({
     port: 5173,
     open: '/dashboard', // Opens this route when the server starts
   },
-  base: "/sempro.github.io/my-app/",
+  base: "/sempro.github.io/",
+  build: {
+    outDir: 'dist', 
+  }
 })
